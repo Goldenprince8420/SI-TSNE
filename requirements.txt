@@ -1,0 +1,9 @@
+numpy
+pandas
+matplotlib
+scipy
+sklearn
+skll
+pyamg
+annoy
+spectral

@@ -1,0 +1,148 @@
+_________________________________
+Run log 1: 26.06.2022 time: 21:08
+---------------------------------
+
+   settings code:
+
+   affinities_train = affinity.PerplexityBasedNN(
+       x_train,
+       perplexity=30,
+       metric="euclidean",
+       n_jobs=8,
+       random_state=42,
+       verbose=True
+   )
+
+   init_train = initialization.schroedinger(
+       X = x_train,
+       n_neighbors = 5,
+       metric = 'euclidean',
+       random_state = 42,
+       neighbors_algorithm='brute',
+       n_jobs=4,
+       weight='heat',
+       affinity='heat',
+       gamma=1.0,
+       trees=10,
+       normalization=None,  # eigenvalue tuner parameters
+       norm_laplace=None,
+       lap_method='sklearn',
+       mu=1.0,
+       potential=None,  # potential matrices parameters
+       X_img=None,
+       sp_neighbors=4,
+       sp_affinity='heat',
+       alpha=17.78,
+       eta=1.0,
+       beta=1.0,
+       n_components=2,
+       eig_solver='dense',
+       eig_tol=1E-12,
+       sparse=False,
+       verbose=True
+   )
+   # init_train = initialization.pca(x_train, random_state=42)
+
+   embedding_train = TSNEEmbedding(
+       init_train,
+       affinities_train,
+       negative_gradient_method="bh",
+       n_jobs=8,
+       verbose=True,
+   )
+
+   results:
+      ===> Finding 90 nearest neighbors using exact search using euclidean distance...
+         --> Time elapsed: 0.01 seconds
+      ===> Calculating affinity matrix...
+         --> Time elapsed: 0.00 seconds
+      ===> Calculating Schroedinger-based initialization...
+      Matrices are sparse. Using ARPACK instead.
+         --> Time elapsed: 7.24 seconds
+      ===> Running optimization with exaggeration=12.00, lr=200.00 for 250 iterations...
+      Iteration   50, KL divergence 1.0053, 50 iterations in 189.5316 sec
+      Iteration  100, KL divergence 0.9125, 50 iterations in 102.2768 sec
+      Iteration  150, KL divergence 1.0100, 50 iterations in 108.5849 sec
+      Iteration  200, KL divergence 0.9071, 50 iterations in 112.1627 sec
+      Iteration  250, KL divergence 0.8970, 50 iterations in 91.0605 sec
+         --> Time elapsed: 606.69 seconds
+      ===> Running optimization with exaggeration=1.00, lr=200.00 for 500 iterations...
+      Iteration   50, KL divergence 0.0631, 50 iterations in 152.1073 sec
+      Iteration  100, KL divergence 0.0580, 50 iterations in 212.8281 sec
+      Iteration  150, KL divergence 0.0547, 50 iterations in 211.2615 sec
+      Iteration  200, KL divergence 0.0538, 50 iterations in 231.0263 sec
+      Iteration  250, KL divergence 0.0530, 50 iterations in 232.0817 sec
+      Iteration  300, KL divergence 0.0523, 50 iterations in 251.8647 sec
+      Iteration  350, KL divergence 0.0511, 50 iterations in 231.8358 sec
+      Iteration  400, KL divergence 0.0512, 50 iterations in 228.2618 sec
+      Iteration  450, KL divergence 0.0510, 50 iterations in 240.7712 sec
+      Iteration  500, KL divergence 0.0511, 50 iterations in 265.0500 sec
+         --> Time elapsed: 2257.67 seconds
+      ===> Finding 15 nearest neighbors in existing embedding using exact search...
+         --> Time elapsed: 1.12 seconds
+      ===> Calculating affinity matrix...
+         --> Time elapsed: 0.47 seconds
+      ===> Running optimization with exaggeration=1.00, lr=0.10 for 250 iterations...
+      Iteration   50, KL divergence 241.3647, 50 iterations in 205.7197 sec
+      Iteration  100, KL divergence 241.3803, 50 iterations in 202.6769 sec
+      Iteration  150, KL divergence 241.3801, 50 iterations in 211.6018 sec
+      Iteration  200, KL divergence 241.3801, 50 iterations in 207.5303 sec
+      Iteration  250, KL divergence 241.3801, 50 iterations in 212.3562 sec
+         --> Time elapsed: 1039.89 seconds
+
+
+
+_________________________________
+Run log 2: 27.06.2022 time: 08:55
+---------------------------------
+
+   settings code:
+   perplexity: 25
+   initial exaggeration: 5
+   n_neighbors: 8
+
+   Results:
+
+
+_________________________________
+Run log 3: 27.06.2022 time: 08:55
+---------------------------------
+   parameters:
+      data: 'iris'
+      sp_dist: 'angle'
+      perplexity: 10
+      k_neighbors: 30
+      momentum: 0.9
+      num_epochs: 500
+      learning rate: 200
+      normalization: 'Identity'
+      n_neighbors: 8
+      gradient_method: 'bh'
+      metric: 'euclidean'
+
+   results:
+      ===> Finding 30 nearest neighbors using exact search using euclidean distance...
+         --> Time elapsed: 0.50 seconds
+      ===> Calculating affinity matrix...
+         --> Time elapsed: 0.05 seconds
+      ===> Calculating Schroedinger-based initialization...
+      Matrices are sparse. Using ARPACK instead.
+         --> Time elapsed: 0.64 seconds
+      ===> Running optimization with exaggeration=1.00, lr=200.00 for 500 iterations...
+      Iteration   50, KL divergence 0.3646, 50 iterations in 341.3162 sec
+      Iteration  100, KL divergence 0.3038, 50 iterations in 249.3239 sec
+      Iteration  150, KL divergence 0.2593, 50 iterations in 268.0431 sec
+      Iteration  200, KL divergence 0.1944, 50 iterations in 249.0307 sec
+      Iteration  250, KL divergence 0.1851, 50 iterations in 249.3755 sec
+      Iteration  300, KL divergence 0.1817, 50 iterations in 212.2641 sec
+      Iteration  350, KL divergence 0.1786, 50 iterations in 217.2291 sec
+      Iteration  400, KL divergence 0.1770, 50 iterations in 245.7739 sec
+      Iteration  450, KL divergence 0.1766, 50 iterations in 215.6802 sec
+      Iteration  500, KL divergence 0.1761, 50 iterations in 222.2484 sec
+         --> Time elapsed: 2473.19 seconds
+
+
+
+_________________________________
+Run log 4: 27.06.2022 time: 12:34
+---------------------------------
