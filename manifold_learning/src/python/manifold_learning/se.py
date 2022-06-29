@@ -77,6 +77,7 @@ class SchroedingerEigenmaps(BaseEstimator):
                  sparse=False,
                  random_state=0):
         self.embedding_ = None
+        self.embedding_new = None
         self.eigVals = None
         self.pl_potential = None
         self.ss_potential = None
@@ -148,7 +149,7 @@ class SchroedingerEigenmaps(BaseEstimator):
         # check the array and see if it satisfies the requirements
         X = check_array(X)
         self.fit(X)
-
+        # self.embedding_new = self.embedding_[:, :self.n_components]
         return self.embedding_
 
     # function that deciphers which potential matrix to use

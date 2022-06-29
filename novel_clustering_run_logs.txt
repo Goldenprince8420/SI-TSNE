@@ -146,3 +146,222 @@ Run log 3: 27.06.2022 time: 08:55
 _________________________________
 Run log 4: 27.06.2022 time: 12:34
 ---------------------------------
+   perplexity: 40
+   k_neighbors: 120
+   random_state: 42
+   after 1000 iterations: KL divergence => 0.4630
+
+
+_________________________________
+Run log 5: 27.06.2022 time: 12:34
+---------------------------------
+   perplexity: 50
+   k_neighbors: 120
+   random_state: 42
+   after 1000 iterations: KL divergence => 0.4503
+
+
+
+_________________________________
+Run log 6: 27.06.2022
+---------------------------------
+   perplexity: 60
+   k_neighbors: 120
+   random_state: 42
+   after 1000 iterations: KL divergence => 0.4594
+
+
+_________________________________
+Run log 6: 27.06.2022
+---------------------------------
+   perplexity: 60
+   k_neighbors: 150
+   random_state: 42
+   after 1000 iterations: KL divergence => 0.4446
+
+
+_________________________________
+Run log 6: 27.06.2022
+---------------------------------
+   perplexity: 70
+   k_neighbors: 200
+   random_state: 42
+   after 1000 iterations: KL divergence => 0.4267
+
+
+_________________________________
+Run log 6: 27.06.2022
+---------------------------------
+   perplexity: 150
+   k_neighbors: 400
+   random_state: 42
+   after 1000 iterations: KL divergence => 0.4147
+
+
+_________________________________
+Run log 6: 27.06.2022
+---------------------------------
+   perplexity: 200
+   k_neighbors: 550
+   random_state: 42
+   after 1000 iterations: KL divergence => 0.4108
+
+
+_________________________________
+Run log 6: 27.06.2022
+---------------------------------
+   perplexity: 300
+   k_neighbors: 800
+   random_state: 42
+   after 1000 iterations: KL divergence => 0.4091
+
+
+
+_________________________________
+Run log 6: 27.06.2022
+---------------------------------
+   perplexity: 350
+   k_neighbors: 900
+   random_state: 42
+   after 1000 iterations: KL divergence => 0.3738
+
+
+_________________________________
+Run log 6: 27.06.2022
+---------------------------------
+   perplexity: 500
+   k_neighbors: 1200
+   random_state: 42
+   after 1000 iterations: KL divergence => 0.3479
+
+
+_________________________________
+Run log 6: 27.06.2022
+---------------------------------
+   perplexity: 600
+   k_neighbors: 1500
+   random_state: 42
+   after 1000 iterations: KL divergence => 0.3338
+
+
+_________________________________
+Run log 6: 27.06.2022
+---------------------------------
+   perplexity: 700
+   k_neighbors: 2000
+   random_state: 42
+   after 1000 iterations: KL divergence => 0.3162
+
+
+_________________________________
+Run log 6: 27.06.2022
+---------------------------------
+   perplexity: 1000
+   k_neighbors: 2900
+   random_state: 42
+   after 1000 iterations: KL divergence => 0.3044
+
+
+_________________________________
+Run log 6: 27.06.2022
+---------------------------------
+   perplexity: 1200
+   k_neighbors: 3500
+   random_state: 42
+   after 1000 iterations: KL divergence => 0.2940
+
+
+_________________________________
+Run log 6: 27.06.2022
+---------------------------------
+   perplexity: 1200
+   k_neighbors: 3500
+   random_state: 42
+   n_neighbors: 100
+   after 1000 iterations: KL divergence => 0.2905
+
+
+_________________________________
+Run log 6: 27.06.2022
+---------------------------------
+   perplexity: 1200
+   k_neighbors: 3500
+   random_state: 42
+   n_neighbors: 1000
+   after 1000 iterations: KL divergence => 0.2950
+
+
+_________________________________
+Run log 6: 27.06.2022
+---------------------------------
+   perplexity: 1200
+   k_neighbors: 3500
+   random_state: 42
+   n_neighbors: 500
+   after 1000 iterations: KL divergence => 0.2923
+
+
+_________________________________
+Run log 6: 27.06.2022
+---------------------------------
+   perplexity: 1200
+   k_neighbors: 3500
+   random_state: 42
+   n_neighbors: 250
+   after 1000 iterations: KL divergence => 0.2912
+
+
+__________________________________
+Run log 7: 28.06.2022
+---------------------------------
+    data: mixed_data
+   perplexity: 1200
+   k_neighbors: 3500
+   random_state: 42
+   n_neighbors: 250
+   after 5000 iterations: KL divergence => 0.2912
+
+Run log 8: 28.06.2022
+---------------------------------
+    data: mixed_data
+   perplexity: 1200
+   k_neighbors: 3500
+   random_state: 42
+   n_neighbors: 250
+   after 5000 iterations: KL divergence => -0.0468
+   Silhoutte Index: 0.9162965611709083
+   Davies Bouldin Score: 0.10561580429380313
+
+Run log 9: 28.06.2022
+---------------------------------
+    data: mixed_data
+   perplexity: 1500
+   k_neighbors: 4200
+   random_state: 42
+   n_neighbors: 250
+   after 5000 iterations: KL divergence => 0.0565
+   Silhoutte Index: 0.6302207820531434
+   Davies Bouldin Score: 0.5570014284789876
+
+Run log 10: 28.06.2022
+---------------------------------
+    data: mixed_data
+   perplexity: 1800
+   k_neighbors: 5000
+   random_state: 42
+   n_neighbors: 250
+   after 5000 iterations: KL divergence => 0.0263
+   Silhoutte Index: 0.78
+   Davies Bouldin Score: 0.40
+
+
+Run log 11: 28.06.2022
+---------------------------------
+    data: mixed_data
+   perplexity: 2500
+   k_neighbors: 5000
+   random_state: 42
+   n_neighbors: 250
+   after 5000 iterations: KL divergence => 0.0263
+   Silhoutte Index: 0.78
+   Davies Bouldin Score: 0.40
