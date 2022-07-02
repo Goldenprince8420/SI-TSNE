@@ -7,3 +7,4 @@ skll
 pyamg
 annoy
 spectral
+networkx

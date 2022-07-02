@@ -1,11 +1,14 @@
 echo "Cloning into Repositories"
 echo "____________________________________________________________"
 echo "Manifold Learning Repo..."
-git clone https://github.com/Goldenprince8420/manifold_learning.git
+# git clone https://github.com/Goldenprince8420/manifold_learning.git
 echo "____________________________________________________________"
 echo "TSNE Repo..."
-git clone https://github.com/Goldenprince8420/openTSNE.git
+# git clone https://github.com/Goldenprince8420/openTSNE.git
 echo "____________________________________________________________"
 echo "Accident Repo..."
-git clone https://github.com/Goldenprince8420/Accident-Analysis.git
+# git clone https://github.com/Goldenprince8420/Accident-Analysis.git
+echo "____________________________________________________________"
+echo "LE Repo..."
+git clone https://github.com/JAVI897/Laplacian-Eigenmaps.git
 echo "Done!!"

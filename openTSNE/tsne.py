@@ -1145,6 +1145,7 @@ class TSNE(BaseEstimator):
         random_state=None,
         verbose=False,
     ):
+        self.se_neighbors = None
         self.n_components = n_components
         self.perplexity = perplexity
         self.learning_rate = learning_rate
@@ -1399,6 +1400,7 @@ class TSNE(BaseEstimator):
                 random_state=self.random_state,
                 verbose=self.verbose
             )
+
         else:
             raise ValueError(
                 f"Unrecognized initialization scheme `{initialization}`."

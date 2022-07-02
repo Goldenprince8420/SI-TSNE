@@ -1,6 +1,7 @@
 import numpy as np
 import scipy.sparse as sp
 from sklearn.decomposition import PCA
+from sklearn.manifold import Isomap, SpectralEmbedding, LocallyLinearEmbedding, MDS
 from sklearn.utils import check_random_state
 from manifold_learning.src.python.manifold_learning.se import SchroedingerEigenmaps
 
@@ -100,6 +101,130 @@ def pca(X, n_components=2, svd_solver="auto", random_state=None, verbose=False):
 
     return np.ascontiguousarray(embedding)
 
+
+def lle(X, n_neighbors=100, n_components=2, method = 'standard', eig_solver="auto", random_state=None, verbose=False):
+    """Initialize an embedding using the top principal components.
+
+    Parameters
+    ----------
+    X: np.ndarray
+        The data matrix.
+
+    n_components: int
+        The dimension of the embedding space.
+
+    eig_solver: str
+        Eigen Value solver.
+
+    random_state: Union[int, RandomState]
+        If the value is an int, random_state is the seed used by the random
+        number generator. If the value is a RandomState instance, then it will
+        be used as the random number generator. If the value is None, the random
+        number generator is the RandomState instance used by `np.random`.
+
+    verbose: bool
+
+    Returns
+    -------
+    initialization: np.ndarray
+
+    """
+    timer = utils.Timer("Calculating PCA-based initialization...", verbose)
+    timer.__enter__()
+
+    lle_ = LocallyLinearEmbedding(
+        n_neighbors=n_neighbors,
+        n_components=n_components,
+        eigen_solver=eig_solver,
+        random_state=random_state,
+        method=method
+    )
+    embedding = lle_.fit_transform(X)
+    rescale(embedding, inplace=True)
+
+    timer.__exit__()
+
+    return np.ascontiguousarray(embedding)
+
+
+def le(X, n_components=2, eig_solver="auto", random_state=None, verbose=False):
+    """Initialize an embedding using the top principal components.
+
+    Parameters
+    ----------
+    X: np.ndarray
+        The data matrix.
+
+    n_components: int
+        The dimension of the embedding space.
+
+    eig_solver: str
+        Eigen Value Decomposition colver.
+
+    random_state: Union[int, RandomState]
+        If the value is an int, random_state is the seed used by the random
+        number generator. If the value is a RandomState instance, then it will
+        be used as the random number generator. If the value is None, the random
+        number generator is the RandomState instance used by `np.random`.
+
+    verbose: bool
+
+    Returns
+    -------
+    initialization: np.ndarray
+
+    """
+    timer = utils.Timer("Calculating PCA-based initialization...", verbose)
+    timer.__enter__()
+
+    le_ = SpectralEmbedding(n_components = n_components,
+                            random_state = random_state,
+                            n_neighbors = 100)
+    embedding = le_.fit_transform(X)
+    rescale(embedding, inplace=True)
+
+    timer.__exit__()
+
+    return np.ascontiguousarray(embedding)
+
+
+def mds(X, n_components=2, random_state=None, verbose=False):
+    """Initialize an embedding using the top principal components.
+
+    Parameters
+    ----------
+    X: np.ndarray
+        The data matrix.
+
+    n_components: int
+        The dimension of the embedding space.
+
+    random_state: Union[int, RandomState]
+        If the value is an int, random_state is the seed used by the random
+        number generator. If the value is a RandomState instance, then it will
+        be used as the random number generator. If the value is None, the random
+        number generator is the RandomState instance used by `np.random`.
+
+    verbose: bool
+
+    Returns
+    -------
+    initialization: np.ndarray
+
+    """
+    timer = utils.Timer("Calculating PCA-based initialization...", verbose)
+    timer.__enter__()
+
+    mds_ = MDS(n_components = n_components,
+               random_state = random_state)
+    embedding = mds_.fit_transform(X)
+    rescale(embedding, inplace=True)
+
+    timer.__exit__()
+
+    return np.ascontiguousarray(embedding)
+
+
 def schroedinger(
         X,
         n_neighbors = 2,
@@ -152,6 +277,15 @@ def schroedinger(
         Returns
         -------
         initialization: np.ndarray
+        :param affinity:
+        :param weight:
+        :param n_jobs:
+        :param random_state:
+        :param metric:
+        :param X_img:
+        :param X:
+        :param n_neighbors:
+        :param neighbors_algorithm:
 
         """
     timer = utils.Timer("Calculating Schroedinger-based initialization...", verbose)
